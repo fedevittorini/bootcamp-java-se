@@ -40,6 +40,8 @@ public class Book {
 	
 	private Map<String, String> content = new HashMap<>();
 	
+	private PublicationStage stage;
+	
 	public Book() {
 	}	
 		
@@ -47,7 +49,7 @@ public class Book {
 
 	
 	public Book(String name, Date publishDate, Integer pages, String sinopsis, List<Author> author,
-			Map<String, String> content) {
+			Map<String, String> content, PublicationStage stage) {
 		super();
 		this.name = name;
 		this.publishDate = publishDate;
@@ -55,9 +57,8 @@ public class Book {
 		this.sinopsis = sinopsis;
 		this.author = author;
 		this.content = content;
+		this.stage = stage;
 	}
-
-
 
 
 	public void setName(String theName) {
@@ -84,11 +85,11 @@ public class Book {
 		this.pages = pages;
 	}
 
-	public String getSinopsis() {
+	public String getSinopsis() throws Exception {
 		return sinopsis;
 	}
 
-	public void setSinopsis(String sinopsis) {
+	public void setSinopsis(String sinopsis) throws Exception {
 		this.sinopsis = sinopsis;
 	}
 
@@ -105,6 +106,13 @@ public class Book {
 	}
 	public void setContent(Map<String, String> content) {
 		this.content = content;
+	}
+
+	public PublicationStage getStage() {
+		return stage;
+	}
+	public void setStage(PublicationStage stage) {
+		this.stage = stage;
 	}
 	
 }
